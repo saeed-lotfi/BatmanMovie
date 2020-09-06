@@ -1,8 +1,12 @@
 package com.bilgiland.batmanmovie.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class Search(
+
+@Entity
+data class SearchModelModel(
     @SerializedName("Poster")
     val poster: String,
     @SerializedName("Title")
@@ -12,5 +16,6 @@ data class Search(
     @SerializedName("Year")
     val year: String,
     @SerializedName("imdbID")
+    @PrimaryKey
     val imdbId: String
 )

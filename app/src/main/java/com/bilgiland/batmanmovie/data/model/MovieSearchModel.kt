@@ -6,6 +6,6 @@ data class MovieSearchModel(
     @SerializedName("Response")
     val response: String,
     @SerializedName("Search")
-    val search: List<Search>,
+    val searchModelModels: List<SearchModelModel>,
     val totalResults: String
 )
