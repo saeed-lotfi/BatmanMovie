@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 
 
 @Entity
-data class SearchModelModel(
+data class SearchMovieModel(
     @SerializedName("Poster")
     val poster: String,
     @SerializedName("Title")
