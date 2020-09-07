@@ -32,16 +32,30 @@ class MovieListVieModel @ViewModelInject constructor(private val repository: Mov
 
     private suspend fun showSuccess(value: MovieSearchModel) {
         if (value.response == "True") {
-            _movies.postValue(value.searchMovieModels)
+            val models = value.searchMovieModels
+
+            _movies.postValue(models)
+            saveDataInDatabase(models)
         } else {
             getFromDataBase()
         }
     }
 
+    // save data in database
+    // first delete all and then save
+    private suspend fun saveDataInDatabase(models: List<SearchMovieModel>) {
+        repository.deleteAll()
+        repository.insertToDatabase(models)
+    }
+
     // get data from
     private suspend fun getFromDataBase() {
-    //    if (repository.getMoviesFromNDatabase().isEmpty())
+        val models = repository.getMoviesFromNDatabase()
+        if (models.isEmpty())
             showError()
+        else
+            _movies.postValue(models)
+
     }
 
     // set error sas true

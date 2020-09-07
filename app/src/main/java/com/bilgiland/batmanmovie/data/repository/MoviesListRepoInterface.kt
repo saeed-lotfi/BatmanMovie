@@ -11,14 +11,19 @@ interface MoviesListRepoInterface {
      */
     suspend fun getAllFromNetwork(): ResultWrapper<MovieSearchModel>
 
-//    /**
-//     * insert movies to database
-//     */
-//    suspend fun insertToDatabase(searchModel: List<SearchMovieModel>)
-//
+    /**
+     * insert movies to database
+     */
+    suspend fun insertToDatabase(movies: List<SearchMovieModel>)
+
     /**
      * get all data from database
      */
     suspend fun getMoviesFromNDatabase(): List<SearchMovieModel>
+
+    /**
+     * delete all database entity
+     */
+    suspend fun deleteAll()
 
 }

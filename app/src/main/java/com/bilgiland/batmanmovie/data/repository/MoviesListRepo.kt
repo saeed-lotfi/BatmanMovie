@@ -21,9 +21,16 @@ class MoviesListRepo @Inject constructor(
         }
     }
 
+    override suspend fun insertToDatabase(movies: List<SearchMovieModel>) {
+        movieSearchDao.insertAll(movies)
+    }
+
     override suspend fun getMoviesFromNDatabase(): List<SearchMovieModel> =
          movieSearchDao.getAll()
 
+    override suspend fun deleteAll() {
+        movieSearchDao.deleteAll()
+    }
 
 
 }
