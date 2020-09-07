@@ -16,8 +16,8 @@ import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
-class ViewMovieListFragment : Fragment(R.layout.movie_list_fragment),
-    ViewMovieListFragmentInterface {
+class MovieListFragment : Fragment(R.layout.movie_list_fragment),
+    MovieListFragmentInterface {
 
     private lateinit var movieAdapter: MovieListAdapter
 

@@ -3,7 +3,7 @@ package com.bilgiland.batmanmovie.ui.movielist
 /**
  * function of movie list
  */
-interface ViewMovieListFragmentInterface {
+interface MovieListFragmentInterface {
 
     /**
      * initialize the object
