@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BatmanMovie</string>
+    <string name="try_again">Try Again</string>
+    <string name="fail_to_get_data">Fail to get data</string>
 </resources>

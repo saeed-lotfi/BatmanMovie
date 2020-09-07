@@ -3,12 +3,13 @@ package com.bilgiland.batmanmovie.ui.movielist
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bilgiland.batmanmovie.R
+import com.bilgiland.batmanmovie.utility.setVisibility
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.movie_list_fragment.*
 import kotlinx.coroutines.launch
@@ -30,8 +31,8 @@ class ViewMovieListFragment : Fragment(R.layout.movie_list_fragment),
         getData()
 
         observeLiveData()
-
     }
+
 
     override fun initObj() {
         rec_movies.apply {
@@ -39,8 +40,8 @@ class ViewMovieListFragment : Fragment(R.layout.movie_list_fragment),
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = movieAdapter
         }
-
     }
+
 
     override fun getData() {
         lifecycleScope.launch {
@@ -49,13 +50,13 @@ class ViewMovieListFragment : Fragment(R.layout.movie_list_fragment),
     }
 
     override fun observeLiveData() {
-        viewModel.movies.observe(viewLifecycleOwner, Observer {
+        viewModel.movies.observe(viewLifecycleOwner, {
             movieAdapter.submitList(it)
             progress_bar.visibility = View.GONE
         })
 
         viewModel.error.observe(viewLifecycleOwner, {
-            Log.d("tag", "observeLiveData: ")
+            setVisibility(lin_try_again, progress_bar)
         })
 
     }
