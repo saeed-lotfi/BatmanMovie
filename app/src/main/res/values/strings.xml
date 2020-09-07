@@ -2,4 +2,9 @@
     <string name="app_name">BatmanMovie</string>
     <string name="try_again">Try Again</string>
     <string name="fail_to_get_data">Fail to get data</string>
+    <string name="language">Language</string>
+    <string name="released_date">Released</string>
+    <string name="vote">vote</string>
+    <string name="overview">OverView</string>
+    <string name="error_occurred">Error occred</string>
 </resources>

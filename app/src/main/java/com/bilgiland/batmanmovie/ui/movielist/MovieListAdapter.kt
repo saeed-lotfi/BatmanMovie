@@ -8,11 +8,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bilgiland.batmanmovie.R
 import com.bilgiland.batmanmovie.data.model.SearchMovieModel
-import com.bilgiland.batmanmovie.utility.ConstValue.IMAGE_URL
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.movie_item.view.*
 
-class MovieListAdapter :
+class MovieListAdapter(val adapterOnClick: (String) -> Unit) :
     ListAdapter<SearchMovieModel, MovieListAdapter.MovieViewHolder>(POST_COMPARATOR) {
 
     class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -26,6 +25,8 @@ class MovieListAdapter :
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         Glide.with(holder.itemView).load(getItem(position)?.poster)
             .into(holder.itemView.movie_poster)
+
+        holder.itemView.setOnClickListener { adapterOnClick(getItem(position).imdbId) }
     }
 
     companion object {

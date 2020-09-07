@@ -13,10 +13,10 @@
     </fragment>
     <fragment
         android:id="@+id/movieFragment"
-        android:name="com.bilgiland.batmanmovie.ui.MovieFragment"
+        android:name="com.bilgiland.batmanmovie.ui.moviedetail.MovieDetailFragment"
         android:label="MovieFragment" >
-        <action
-            android:id="@+id/action_movieFragment_to_movieListFragment2"
-            app:destination="@id/movieListFragment" />
+        <argument
+            android:name="movie_id"
+            app:argType="string" />
     </fragment>
 </navigation>
