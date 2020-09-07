@@ -31,7 +31,7 @@ class MovieListVieModel @ViewModelInject constructor(private val repository: Mov
     }
 
     private suspend fun showSuccess(value: MovieSearchModel) {
-        if (value.response == "true") {
+        if (value.response == "True") {
             _movies.postValue(value.searchMovieModels)
         } else {
             getFromDataBase()
@@ -40,7 +40,7 @@ class MovieListVieModel @ViewModelInject constructor(private val repository: Mov
 
     // get data from
     private suspend fun getFromDataBase() {
-        if (repository.getMoviesFromNDatabase().isEmpty())
+    //    if (repository.getMoviesFromNDatabase().isEmpty())
             showError()
     }
 

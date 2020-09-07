@@ -16,5 +16,10 @@ interface ViewMovieListFragmentInterface {
      */
     fun getData()
 
+    /**
+     * observe liveData from viewModel
+     */
+    fun observeLiveData()
+
 
 }

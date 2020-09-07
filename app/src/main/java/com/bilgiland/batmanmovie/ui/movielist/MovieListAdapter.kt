@@ -24,7 +24,7 @@ class MovieListAdapter :
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        Glide.with(holder.itemView).load(IMAGE_URL + getItem(position)?.poster)
+        Glide.with(holder.itemView).load(getItem(position)?.poster)
             .into(holder.itemView.movie_poster)
     }
 

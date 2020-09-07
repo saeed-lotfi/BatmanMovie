@@ -3,7 +3,6 @@ package com.bilgiland.batmanmovie.data.network
 import com.bilgiland.batmanmovie.data.model.ResultWrapper
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import retrofit2.HttpException
 
 suspend fun <T> safeApiCall(
     dispatcher: CoroutineDispatcher,
