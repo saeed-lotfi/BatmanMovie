@@ -8,7 +8,6 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-
     @GET("/")
     suspend fun getBatmanMovies(
         @Query("apikey") apiKey: String = API_KEY,

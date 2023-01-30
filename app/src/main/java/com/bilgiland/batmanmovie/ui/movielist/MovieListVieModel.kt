@@ -1,6 +1,5 @@
 package com.bilgiland.batmanmovie.ui.movielist
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,8 +7,11 @@ import com.bilgiland.batmanmovie.data.model.MovieSearchModel
 import com.bilgiland.batmanmovie.data.model.ResultWrapper
 import com.bilgiland.batmanmovie.data.model.SearchMovieModel
 import com.bilgiland.batmanmovie.data.repository.MoviesListRepo
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MovieListVieModel @ViewModelInject constructor(private val repository: MoviesListRepo) :
+@HiltViewModel
+class MovieListVieModel @Inject constructor(private val repository: MoviesListRepo) :
     ViewModel() {
 
     // show error

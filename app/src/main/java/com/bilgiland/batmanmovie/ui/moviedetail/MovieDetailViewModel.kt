@@ -1,14 +1,18 @@
 package com.bilgiland.batmanmovie.ui.moviedetail
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bilgiland.batmanmovie.data.model.MovieModel
 import com.bilgiland.batmanmovie.data.model.ResultWrapper
 import com.bilgiland.batmanmovie.data.repository.MovieDetailRepository
+import javax.inject.Inject
+import dagger.hilt.android.lifecycle.HiltViewModel
 
-class MovieDetailViewModel @ViewModelInject constructor(private val repository: MovieDetailRepository) :
+
+
+@HiltViewModel
+class MovieDetailViewModel @Inject constructor(private val repository: MovieDetailRepository) :
     ViewModel() {
 
 
